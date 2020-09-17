@@ -1,0 +1,13 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+
+{% block body %}
+    There is already an entry on this topic
+    <br>
+    You can open the below title and edit if necessary.
+    <a href="/wiki/{{ title }} "><li>{{ title }}</li></a>
+{% endblock %}

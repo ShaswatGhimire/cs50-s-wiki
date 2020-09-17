@@ -1,0 +1,28 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+{% if edit %}
+    Edit Page
+{% endif %}
+{% if not edit %}
+    New Page
+{% endif %}
+{% endblock %}
+
+
+{% block body %}
+{% if edit %}
+    <h2>Edit Page</h2>
+{% endif %}
+{% if not edit %}
+<h1>Create New Page</h1>
+{% endif %}
+
+
+    <form action="{% url 'newpage' %}" method = "POST"  name="entryform" >
+        {% csrf_token %}
+        {{ form }}
+        <br>
+        <input type="submit" value="Save">
+    </form>
+{% endblock %}
